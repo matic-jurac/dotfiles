@@ -1,0 +1,55 @@
+{
+  "layer": "top",
+  "position": "top",
+  "height": 30,
+  "spacing": 10,
+  "modules-left": [
+    "sway/workspaces",
+    "sway/taskbar"
+  ],
+  "modules-center": [
+    "hyprland/window"
+  ],
+  "modules-right": [
+    "tray",
+    "battery",
+    "hyprland/language",
+    "custom/weather",
+    "clock"
+  ],
+ "hyprland/window": {
+    "max-length": 128
+  },
+  "clock": {
+            "format": "{:%Y-%m-%d %H:%M}",
+        "tooltip-format": "<big>{:%Y %B}</big>\n<tt><small>{calendar}</small></tt>",
+        "format-alt": "{:%Y-%m-%d}"
+  },
+  "tray": {
+    "spacing": 4
+  },
+  "battery": {
+        	"states": {
+            		"warning": 30,
+            		"critical": 15
+        	},
+        	"format": "{icon} {capacity}%",
+        	"format-charging": "C {capacity}%",
+        	"format-plugged": "P {capacity}%",
+        	"format-alt": "{time} {icon}",
+        	"format-full": "F {capacity}%",
+        	"format-icons": ["Charging:", "Idk", "Discharging:"]
+	},
+  "custom/weather": {
+    "exec": "~/.config/waybar/wittr.sh",
+    "return-type": "json",
+    "format": "{}",
+    "tooltip": true,
+    "interval": 900
+  },
+  "hyprland/language": {
+    "format-pl": "[pl]",
+    "format-en": "[us]",
+    "on-click": "hyprctl switchxkblayout at-translated-set-2-keyboard next"
+  }
+}
